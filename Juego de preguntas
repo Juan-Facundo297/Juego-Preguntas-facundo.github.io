@@ -39,37 +39,41 @@
       <li><button onclick="checkAnswer(this)">Selva</button></li>
     </ul>
   </div>
-      <h3>Pregunta 2: ¿Que comen los tucanes?</h3>
+  <div class="question">
+    <h2>Pregunta 2: ¿Que comen los tucanes?</h2>
     <img src="Tucan.jpg" alt="Tucan">
     <ul>
-      <li><button onclick="checkAnswer(this)">gran variedad de frutos</button></li>
       <li><button onclick="checkAnswer(this)">Maiz</button></li>
-      <li><button onclick="checkAnswer(this)">Cafe</button></li>
+      <li><button onclick="checkAnswer(this)">Maiz</button></li>
+      <li><button onclick="checkAnswer(this)">Gran variedad de frutos</button></li>
       <li><button onclick="checkAnswer(this)">Pasto</button></li>
       <li><button onclick="checkAnswer(this)">Madera</button></li>
     </ul>
-</div>
-     <h4>Pregunta 3: ¿Que significa la palabra Yacaré en Guarani?</h4>
+  </div>
+  <div class="question">
+    <h2>Pregunta 3: ¿Que significa la palabra Yacaré en Guarani?</h2>
     <img src="Yacare.jpg" alt="Yacare">
     <ul>
-      <li><button onclick="checkAnswer(this)">El que asoma la cabeza</button></li>
       <li><button onclick="checkAnswer(this)">El que nada rapido</button></li>
+      <li><button onclick="checkAnswer(this)">El que asoma la cabeza</button></li>
       <li><button onclick="checkAnswer(this)">El mas pequeño</button></li>
       <li><button onclick="checkAnswer(this)">El cola larga</button></li>
       <li><button onclick="checkAnswer(this)">El dientes fuertes</button></li>
     </ul>
-</div>
-     <h5>Pregunta 4: ¿Cuantos dientes tiene el yacare?</h5>
+  </div>
+  <div class="question">
+    <h2>Pregunta 4: ¿Cuantos dientes tiene el yacare?</h2>
     <img src="Yacare.jpg" alt="Yacare">
     <ul>
-      <li><button onclick="checkAnswer(this)">Entre 84 y 70</button></li>
+      <li><button onclick="checkAnswer(this)">Entre 81 y 79</button></li>
       <li><button onclick="checkAnswer(this)">Entre 86 y 78</button></li>
       <li><button onclick="checkAnswer(this)">Entre 100 y 90</button></li>
       <li><button onclick="checkAnswer(this)">Entre 90 y 84</button></li>
-      <li><button onclick="checkAnswer(this)">Entre 81 y 79</button></li>
+      <li><button onclick="checkAnswer(this)">Entre 84 y 70</button></li>
     </ul>
-</div>
-     <h6>Pregunta 5: ¿Cual diferencia hay entre el yaguareté y el Leopardo?</h6>
+  </div>
+  <div class="question">
+    <h2>Pregunta 5: ¿Cual diferencia hay entre el yaguareté y el Leopardo?</h2>
     <img src="yaguareté.jpg" alt="yaguareté">
     <ul>
       <li><button onclick="checkAnswer(this)">Que el yaguarete vive en misiones</button></li>
@@ -78,11 +82,25 @@
       <li><button onclick="checkAnswer(this)">Que no es habil</button></li>
       <li><button onclick="checkAnswer(this)">Que salta a poca altura</button></li>
     </ul>
+  </div>
 </div>
     
 <script>
 function checkAnswer(btn) {
-  var correctAnswer = btn.textContent.trim() === "Altas montañas";
+  var correctAnswer;
+  switch(btn.textContent.trim()) {
+    case "Altas montañas":
+    case "gran variedad de frutos":
+    case "El que asoma la cabeza":
+    case "Entre 86 y 78":
+    case "Que tienen diferente pelaje":
+      correctAnswer = true;
+      break;
+    default:
+      correctAnswer = false;
+      break;
+  }
+  
   if (correctAnswer) {
     alert("¡Respuesta correcta!");
   } else {
